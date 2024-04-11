@@ -16,6 +16,6 @@ with DAG(
     @task(task_id="python_task_2")
     def print_context2(some_input2):
         print(some_input2)
-
-    python_task_1 = print_context('task_decorator 실행')
+    
     python_task_2 = print_context('task_decorator2 실행')
+    python_task_1 = print_context('task_decorator 실행')
