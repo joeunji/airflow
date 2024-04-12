@@ -16,7 +16,6 @@ with DAG(
     def inner_func(**kwargs):
         msg = kwargs.get('msg') or '' 
         print(msg)
-        raise AirflowException('downstream_1 Exception!')
 
     @task_group(group_id='first_group')
     def group_1():
@@ -34,7 +33,7 @@ with DAG(
 
         inner_func1() >> inner_function2
 
-    with TaskGroup(group_id='second_group', tooltip='두 번째 그룹입니다', ui_fgcolor='purple') as group_2:
+    with TaskGroup(group_id='second_group', tooltip='두 번째 그룹입니다') as group_2:
         ''' 여기에 적은 docstring은 표시되지 않습니다'''
         @task(task_id='inner_function1', trigger_rule='all_done')
         def inner_func1(**kwargs):
