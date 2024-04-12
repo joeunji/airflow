@@ -13,7 +13,6 @@ with DAG(
     
     empty_1 = EmptyOperator(
         task_id='empty_1',
-        ui_color = '#FFE400'
     )
 
     empty_2 = EmptyOperator(
