@@ -12,7 +12,8 @@ with DAG(
 ) as dag:
     
     empty_1 = EmptyOperator(
-        task_id='empty_1'
+        task_id='empty_1',
+        ui_color = 'yellow'
     )
 
     empty_2 = EmptyOperator(
