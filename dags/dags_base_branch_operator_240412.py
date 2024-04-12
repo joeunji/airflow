@@ -20,9 +20,22 @@ with DAG(
                 return 'task_a'
             elif selected_item in ['B','C']:
                 return ['task_b','task_c']
+            
+    class CustomBranchOperator2(BaseBranchOperator):
+        def choose_branch(self, context):
+            import random
+            print(context)
+            
+            item_lst = ['A', 'B', 'C']
+            selected_item = random.choice(item_lst)
+            if selected_item == 'A':
+                return 'task_a'
+            elif selected_item in ['B','C']:
+                return ['task_b','task_c']
 
     
     custom_branch_operator = CustomBranchOperator(task_id='python_branch_task')
+    custom_branch_operator2 = CustomBranchOperator2(task_id='python_branch_task2')
 
     
     def common_func(**kwargs):
@@ -47,3 +60,4 @@ with DAG(
     )
 
     custom_branch_operator >> [task_a, task_b, task_c]
+    custom_branch_operator2 >> [task_a, task_b, task_c]
