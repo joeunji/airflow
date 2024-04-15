@@ -31,6 +31,6 @@ with DAG(
         import json
         from pprint import pprint
 
-        pprint(json.loads(rslt).list_total_count)
+        pprint(json.loads(rslt).get("list_total_count"))
         
     tb_cycle_station_info >> python_2()
