@@ -65,7 +65,7 @@ class JonjiExOperator(BaseOperator):
 
         ti = kwargs['ti']
         rslt = ti.xcom_pull(task_ids='tb_cycle_station_info')
-        contents = json.loads(rslt)
+        contents = json.loads(rslt.text)
 
         key_nm = list(contents.keys())[0]
         row_data = contents.get(key_nm).get('row')
