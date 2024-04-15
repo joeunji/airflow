@@ -47,12 +47,13 @@ class JonjiExOperator(BaseOperator):
 
         self.test()
 
-    def test(self, **kwargs):
+    def test(**kwargs):
         ti = kwargs['ti']
         result = ti.xcom_pull(task_ids = 'python_2')
 
-        self.log.info('우아아아아')
-        self.log.info(result)
+        from pprint import pprint
+
+        pprint(result)
         
 
     
@@ -82,7 +83,8 @@ class JonjiExOperator(BaseOperator):
         row_data = contents.get(key_nm).get('row')
         row_df = pd.DataFrame(row_data)
 
-        return row_df
+        ti.xcom_push(key='result1', value={row_df})
+        # return row_df
         # import json
         # from pprint import pprint
 
