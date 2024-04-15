@@ -44,7 +44,7 @@ class JonjiExOperator(BaseOperator):
         # if not os.path.exists(self.path):
         #     os.system(f'mkdir -p {self.path}')
         # total_row_df.to_csv(self.path + '/' + self.file_name, encoding='utf-8', index=False)
-        self.python_2()
+        # self.python_2()
         self.test()
 
     def test(self, **kwargs):
@@ -96,5 +96,5 @@ class JonjiExOperator(BaseOperator):
         pprint(ti)
         # pprint(json.loads(rslt))
         
-    # tb_cycle_station_info >> python_2()
+    tb_cycle_station_info >> python_2()
 
