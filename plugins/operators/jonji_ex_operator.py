@@ -42,6 +42,7 @@ class JonjiExOperator(BaseOperator):
         #         end_row += 1000
 
         row_df = self.python_2()
+        self.log.info('과연?')
         self.log.info(row_df)        
 
         # if not os.path.exists(self.path):
