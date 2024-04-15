@@ -48,12 +48,14 @@ class JonjiExOperator(BaseOperator):
         self.test()
 
     def test(self, **kwargs):
-        ti = kwargs['ti']
-        result = ti.xcom_pull(task_ids = 'python_2')
+        self.log.info('우아아아엉엉')
+        self.log.info(kwargs)
+        # ti = kwargs['ti']
+        # result = ti.xcom_pull(task_ids = 'python_2')
 
-        from pprint import pprint
+        # from pprint import pprint
 
-        pprint(result)
+        # pprint(result)
         
 
     
