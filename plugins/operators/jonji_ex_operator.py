@@ -41,13 +41,20 @@ class JonjiExOperator(BaseOperator):
         #         start_row = end_row + 1
         #         end_row += 1000
 
-        row_df = self.python_2()
-        self.log.info('과연?')
-        self.log.info(row_df)        
-
         # if not os.path.exists(self.path):
         #     os.system(f'mkdir -p {self.path}')
         # total_row_df.to_csv(self.path + '/' + self.file_name, encoding='utf-8', index=False)
+
+        self.test()
+
+    def test(self, **kwargs):
+        t2 = kwargs['ti']
+        result = t2.xcom_pull(task_ids = 'python_2')
+
+        self.log.info('우아아아아')
+        self.log.info(result)
+        
+
     
 
 
