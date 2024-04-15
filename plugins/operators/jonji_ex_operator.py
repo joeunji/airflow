@@ -45,7 +45,7 @@ class JonjiExOperator(BaseOperator):
         #     os.system(f'mkdir -p {self.path}')
         # total_row_df.to_csv(self.path + '/' + self.file_name, encoding='utf-8', index=False)
 
-        self.test()
+        self.test(self.python_2())
 
     def test(**kwargs):
         ti = kwargs['ti']
@@ -92,5 +92,3 @@ class JonjiExOperator(BaseOperator):
         
     # tb_cycle_station_info >> python_2()
 
-
-    test(python_2())
