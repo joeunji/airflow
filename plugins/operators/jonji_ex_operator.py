@@ -45,7 +45,7 @@ class JonjiExOperator(BaseOperator):
         #     os.system(f'mkdir -p {self.path}')
         # total_row_df.to_csv(self.path + '/' + self.file_name, encoding='utf-8', index=False)
 
-        self.test(self.python_2())
+        self.test(self, self.python_2())
 
     def test(self, **kwargs):
         ti = kwargs['ti']
