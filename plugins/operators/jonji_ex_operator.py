@@ -47,7 +47,7 @@ class JonjiExOperator(BaseOperator):
 
         self.test(self.python_2())
 
-    def test(**kwargs):
+    def test(self, **kwargs):
         ti = kwargs['ti']
         result = ti.xcom_pull(task_ids = 'python_2')
 
