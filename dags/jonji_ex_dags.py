@@ -7,7 +7,8 @@ with DAG(
     dag_id='jonji_ex_dags',
     schedule='0 7 * * *',
     start_date=pendulum.datetime(2023,4,1, tz='Asia/Seoul'),
-    catchup=False
+    catchup=False,
+    tags=['jonji_ex']
 ) as dag:
     '''서울시 공공자전거 대여소 정보'''
     task_1 = JonjiExOperator(
