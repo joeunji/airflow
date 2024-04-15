@@ -45,9 +45,9 @@ class JonjiExOperator(BaseOperator):
         #     os.system(f'mkdir -p {self.path}')
         # total_row_df.to_csv(self.path + '/' + self.file_name, encoding='utf-8', index=False)
 
-        self.test(self, self.python_2())
+        self.test(self.python_2())
 
-    def test(self, **kwargs):
+    def test(**kwargs):
         ti = kwargs['ti']
         result = ti.xcom_pull(task_ids = 'python_2')
 
