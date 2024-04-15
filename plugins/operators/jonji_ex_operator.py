@@ -86,10 +86,14 @@ class JonjiExOperator(BaseOperator):
         row_df = pd.DataFrame(row_data)
 
         ti.xcom_push(key='result1', value={row_df})
+
+
         # return row_df
         # import json
-        # from pprint import pprint
+        from pprint import pprint
 
+        pprint('python_2 함수')
+        pprint(ti)
         # pprint(json.loads(rslt))
         
     # tb_cycle_station_info >> python_2()
