@@ -10,7 +10,7 @@ email_lst = [email.strip() for email in email_str.split(',')]
 with DAG(
     dag_id='dags_sla_email_example',
     start_date=pendulum.datetime(2023, 5, 1, tz='Asia/Seoul'),
-    schedule='*/10 * * * *',
+    schedule='*/1 * * * *',
     catchup=False,
     default_args={
         'sla': timedelta(seconds=70),
