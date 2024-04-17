@@ -4,8 +4,8 @@ from airflow.sensors.date_time import DateTimeSensorAsync
 
 with DAG(
     dag_id="dags_time_sensor_with_async",
-    start_date=pendulum.datetime(2024, 4, 17, 16, 0, 0),
-    end_date=pendulum.datetime(2024, 4, 17, 16, 10, 0),
+    start_date=pendulum.datetime(2024, 4, 17, 16, 2, 0).in_timezone("Asia/Seoul"),
+    end_date=pendulum.datetime(2024, 4, 17, 16, 10, 0).in_timezone("Asia/Seoul"),
     schedule="*/2 * * * *",
     catchup=True,
 ) as dag:
