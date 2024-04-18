@@ -1,0 +1,5 @@
+SELECT	EMP_NO
+      , USER_ID
+      , EMP_NAME
+FROM	EMP_MAST EM
+WHERE	USER_ID = 'jonji'
