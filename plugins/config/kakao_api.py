@@ -28,7 +28,7 @@ def _refresh_token_to_variable():
 
     now = pendulum.now('Asia/Seoul').strftime('%Y-%m-%d %H:%M:%S')
     tokens['updated'] = now
-    os.system(f'airflow variables set kakao_tokens "{tokens}"')
+    os.system(f'airflow variables set kakao_tokens "{tokens}"') # 쉘 스크립트 명령(토큰정보 Variable 업데이트 명령)
     print('variable 업데이트 완료(key: kakao_tokens)')
 
 

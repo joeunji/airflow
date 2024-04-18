@@ -25,11 +25,11 @@ with today_dag as (
 )
 select 
 	 d.dag_id
-	,coalesce(run_cnt, 0)
-	,coalesce(r.success_cnt, 0)
-	,coalesce(r.failed_cnt, 0)
-	,coalesce(r.running_cnt, 0)
-    ,r.last_failed_date
+	,run_cnt
+	,r.success_cnt
+	,r.failed_cnt
+	,r.running_cnt
+	,r.last_failed_date
 	,r.last_success_date
 	,d.next_dagrun_data_interval_start
 	,d.next_dagrun_data_interval_end
