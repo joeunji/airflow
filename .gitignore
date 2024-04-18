@@ -1,3 +1,4 @@
 venv
 .env
 jupyter.ipynb
+plugins/config/get_kakao_token.py
