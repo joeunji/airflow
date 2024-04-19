@@ -44,11 +44,11 @@ with DAG(
     @task(task_id='get_emp_task')
     def get_emp_task():
         
-        oracledb.init_oracle_client()
-        con = oracledb.connect(user="ERPUSER", password="erpuser", dsn="118.32.191.131:1524/MISORA")
+        # oracledb.init_oracle_client()
+        # con = oracledb.connect(user="ERPUSER", password="erpuser", dsn="118.32.191.131:1524/MISORA")
 
-        # oracle_hook = OracleHook(oracle_conn_id='conn_db_oracle')
-        with closing(con) as conn:
+        oracle_hook = OracleHook(oracle_conn_id='conn_db_oracle', thick_mode=True)
+        with closing(oracle_hook.get_conn()) as conn:
             with closing(conn.cursor()) as cursor:
                 with open('/opt/airflow/files/sqls/jonji_test.sql', 'r') as sql_file:
                     sql = '\n'.join(sql_file.readlines())
